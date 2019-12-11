@@ -1,0 +1,17 @@
+body{
+    background: #232323; 
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.formHolder{
+    margin-top: 20vh;
+    width: 35vw;
+}
+img{
+    display: flex;
+    margin: auto;
+    padding-top: 20px;
+}
