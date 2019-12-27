@@ -26,7 +26,7 @@ else{
         <ul>
             <li><a href="create_employee_account.php">Create Employee Account</a></li>
             <li><a href="create_manager_account.php">Create Manager Account</a></li>
-            <li><a href="create_admin_account.php">Create Admin Account</a></li>
+            <li><a href="create_admin_account.php">Create HR Account</a></li>
         </ul>
     </div>
 </body>

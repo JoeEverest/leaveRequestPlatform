@@ -1,7 +1,7 @@
 <?php
 include('includes/config.php');
 session_start();
-
+error_reporting(0);
 if (isset($_SESSION['username'])) {
 	$userLoggedIn = $_SESSION['username'];
 }
@@ -35,25 +35,27 @@ else{
             </thead>
             <tbody>
                 <?php
-                $getReq = "SELECT * FROM manager_leave_requests WHERE email = '$userLoggedIn' ORDER BY id DESC";
+                $getReq = "SELECT * FROM manager_leave_requests WHERE email = '$userLoggedIn' ORDER BY date DESC";
                 $getReq = mysqli_query($con, $getReq);
                 while ($data = mysqli_fetch_array($getReq)) {
                     $reqID = $data['id'];
                     $name = $data['employee_name'];
                     $leaveRequested = $data['leave_request'];
                     $status = $data['status'];
-                }
-                $hrStatus = "SELECT * FROM hr_leave_requests WHERE request_id = '$reqID'";
-                $hrStatus = mysqli_query($con, $hrStatus);
-                while ($dataReq = mysqli_fetch_array($hrStatus)) {
-                    $statusHR = $dataReq['status'];
-                }
-                $hrStatus = "SELECT * FROM hr_approved_requests WHERE request_id = '$reqID'";
-                $hrStatus = mysqli_query($con, $hrStatus);
-                while ($dataGet = mysqli_fetch_array($hrStatus)) {
-                    $daysApproved = $dataGet['days_approved'];
-                    $date = $dataGet['date'];
-                }
+                    
+                    $hrStatus = "SELECT * FROM hr_leave_requests WHERE request_id = '$reqID'";
+                    $hrStatus = mysqli_query($con, $hrStatus);
+                    while ($dataReq = mysqli_fetch_array($hrStatus)) {
+                        $statusHR = $dataReq['status'];
+                        
+                        $hrStatus = "SELECT * FROM hr_approved_requests WHERE request_id = '$reqID'";
+                        $hrStatus = mysqli_query($con, $hrStatus);
+                        while ($dataGet = mysqli_fetch_array($hrStatus)) {
+                            $daysApproved = $dataGet['days_approved'];
+                            $date = $dataGet['date'];
+                        }
+                    }
+                
                 ?>
                 <tr>
                     <td><?php echo $name; ?></td>
@@ -63,7 +65,7 @@ else{
                     <td><?php echo $daysApproved; ?></td>
                     <td><?php echo $date; ?></td>
                 </tr>
-                <?php?>
+                <?php } ?>
             </tbody>
         </table>
     </div>

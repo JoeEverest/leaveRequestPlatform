@@ -34,6 +34,7 @@ if (isset($_POST['submit'])) {
         $addToTable = "INSERT INTO manager_leave_requests VALUES ('', '$name','$userLoggedIn', '$leaveName', '$attachement', '$departmantName', '$today', 'PENDING')";
         if (mysqli_query($con, $addToTable)) {
             if (move_uploaded_file($_FILES['attachments']['tmp_name'],$upload)) {
+                echo "<script> alert('Leave request submitted'); </script>";
                 header('Location: my_requests.php');
             }else {
                 echo mysqli_error($con);
