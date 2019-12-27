@@ -1,6 +1,9 @@
 <?php
 include('includes/config.php');
+session_start();
+include('includes/loginHandler.php');
 include('includes/admin/admin_login_handler.php');
+include('includes/management/management_login_handler.php');
 
 
 ?>
@@ -20,9 +23,10 @@ include('includes/admin/admin_login_handler.php');
 <body>
     <div class="container">
     
+    
     <div class="formHolder">
         <form method="post">
-            <h3>Admin Login</h3>
+            <h3>Login</h3>
             <label for="logemail">Email Address</label>
             <input type="email" class="form-control" name="logemail" id="logEmail" placeholder="Email Address">
             <label for="logpassword">Password</label>

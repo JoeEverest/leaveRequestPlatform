@@ -30,8 +30,8 @@ if (isset($_POST['submit'])) {
         while ($data = mysqli_fetch_array($getDep)) {
             $departmantName = $data['name'];
         }
-
-        $addToTable = "INSERT INTO manager_leave_requests VALUES ('', '$name','$leaveName', '$userLoggedIn', '$attachement', '$departmantName', 'PENDING')";
+        $today = date('Y-m-d', strtotime('Today'));
+        $addToTable = "INSERT INTO manager_leave_requests VALUES ('', '$name','$userLoggedIn', '$leaveName', '$attachement', '$departmantName', '$today', 'PENDING')";
         if (mysqli_query($con, $addToTable)) {
             if (move_uploaded_file($_FILES['attachments']['tmp_name'],$upload)) {
                 header('Location: my_requests.php');

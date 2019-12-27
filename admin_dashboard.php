@@ -19,11 +19,11 @@ else{
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <title>Admin Dashboard</title>
+    <title>HR Dashboard</title>
 </head>
 <body>
     <div class="container">
-        <h1>Admin Dashboard</h1>
+        <h1>HR Dashboard</h1>
         <ul>
             <li><a href="create_leave.php">Create Leave</a></li>
             <li><a href="departments.php">Departments</a></li>

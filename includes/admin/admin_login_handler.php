@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 if (isset($_POST['logIn'])) {
 	$email = filter_var($_POST['logemail'], FILTER_SANITIZE_EMAIL);//Sanitize email
 
