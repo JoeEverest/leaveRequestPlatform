@@ -23,11 +23,44 @@ else{
 </head>
 <body>
     <div class="container">
-        <ul>
-            <li><a href="create_employee_account.php">Create Employee Account</a></li>
-            <li><a href="create_manager_account.php">Create Manager Account</a></li>
-            <li><a href="create_admin_account.php">Create HR Account</a></li>
-        </ul>
+    <h3>Employee Details</h3>
+    <table class="table table-striped table-sm">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Position</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+        <?php
+            $qr = "SELECT * FROM `employee_details` ORDER BY id DESC";
+            $qr = mysqli_query($con, $qr);
+            while ($data = mysqli_fetch_array($qr)) {
+                $id = $data['id'];
+                $name = $data['name'];
+                $email = $data['email'];
+                $departmentId = $data['department_id'];
+                $position = $data['position'];
+                $date = $data['employment_date'];
+
+                $getDepartment = "SELECT name FROM `departments` WHERE id = '$departmentId'";
+                $getDepartment = mysqli_query($con, $getDepartment);
+                $department = mysqli_fetch_array($getDepartment);
+                $departmentName = $department['name'];
+
+        ?>
+        <tr>
+            <td><?php echo $name; ?></td>
+            <td><?php echo $email; ?></td>
+            <td><?php echo $departmentName; ?></td>
+            <td><?php echo $position; ?></td>
+            <td><a href="employee_profile.php?id=<?php echo $id; ?>"><button class="btn btn-sm btn-success">View profile</button></a></td>
+        </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+        
     </div>
 </body>
 </html>

@@ -19,23 +19,15 @@ else{
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <title>HR Dashboard</title>
+    <title>Create Accounts</title>
 </head>
 <body>
     <div class="container">
-        <h1>HR Dashboard</h1>
         <ul>
-            <li><a href="create_leave.php">Create Leave</a></li>
-            <li><a href="departments.php">Departments</a></li>
-            <li><a href="employee_details.php">Employee Details</a></li>
-            <li><a href="create_new_accounts.php">Create New Account</a></li>
-            <li><a href="approved_pending_requests.php">Pending Requests</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="create_employee_account.php">Create Employee Account</a></li>
+            <li><a href="create_manager_account.php">Create Manager Account</a></li>
+            <li><a href="create_admin_account.php">Create HR Account</a></li>
         </ul>
-        
-        
-        
-        
     </div>
 </body>
 </html>
