@@ -61,11 +61,12 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <div class="container">
-        <h1>Request Leave</h1>
+        <h2>Employee dashboard</h2>
         <ul>
             <li><a href="my_requests.php">My Requests</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
+        <h3>Request Leave</h3>
                 <?php
                 if (isset($_GET['id'])) {
                     echo '<form method="post" enctype="multipart/form-data">';
@@ -97,7 +98,7 @@ if (isset($_POST['submit'])) {
                 }else {
                     ?>
                     <form method="get"><br>
-                    <label for="customer_name">Leave Name:</label>
+                    <label for="customer_name">Select Leave:</label>
                     <select class="form-control" required name="id">
                         <option value=""></option>
                         <?php

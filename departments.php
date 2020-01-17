@@ -23,6 +23,7 @@ else{
 </head>
 <body>
     <div class="container">
+        <h3>Departments</h3>
         <a href="create_department.php">Create Department</a>
 
         <table class="table table-striped table-sm">

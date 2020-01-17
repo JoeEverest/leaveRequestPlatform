@@ -50,7 +50,7 @@ if (isset($_POST['signUp'])){
         }
     }
     else{
-        header("Location: employees.php");
+        header("Location: employee_details.php");
     }
     
 }

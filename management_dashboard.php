@@ -24,7 +24,7 @@ else{
 </head>
 <body>
     <div class="container">
-        <h1>Management Dashboard</h1>
+        <h2>Management Dashboard</h2>
         <ul>
         <li><a href="pending_leave_requests.php">Pending Requests</a></li>
         <li><a href="logout.php">logout</a></li>

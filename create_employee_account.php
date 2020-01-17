@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
         $addToTable = "INSERT INTO employee_details VALUES ('', '$name', '$email', '$position', '$department', '$date')";
         if (mysqli_query($con, $addToTable)) {
-            header("Location: employees.php");
+            header("Location: employee_register.php?email=".$email);
         }else{
             echo mysqli_error($connect);
             echo 'There was an error '.$error;

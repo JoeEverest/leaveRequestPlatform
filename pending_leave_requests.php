@@ -35,7 +35,7 @@ while ($data = mysqli_fetch_array($getDepartment)) {
 </head>
 <body>
     <div class="container">
-        <h1>Pending Leaves</h1>
+        <h2>Pending Leave Requests</h2>
         <table class="table table-striped table-sm">
             <thead>
                 <th>Employee Name</th>

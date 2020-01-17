@@ -31,7 +31,7 @@ else{
                 <th>Manager Feedback</th>
                 <th>HR Feedback</th>
                 <th>Days Granted</th>
-                <th>Date</th>
+                <th>Date of Approval</th>
             </thead>
             <tbody>
                 <?php
