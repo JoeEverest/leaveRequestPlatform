@@ -23,8 +23,25 @@ else{
     <title>My Requests</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">My Leave Requests</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="dashboard.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav><br>
     <div class="container">
-        <h3>My Leave Requests</h3>
+
+        <div class="table-responsive">
         <table class="table table-stripped table-sm">
             <thead>
                 <th>Name</th>
@@ -70,6 +87,7 @@ else{
                 <?php } ?>
             </tbody>
         </table>
+        </div>
     </div>
 </body>
 </html>

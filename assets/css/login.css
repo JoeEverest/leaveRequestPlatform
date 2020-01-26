@@ -15,3 +15,8 @@ img{
     margin: auto;
     padding-top: 20px;
 }
+@media screen and (max-width: 750px) {
+    .formHolder{
+        width: 80vw;
+    }
+  }

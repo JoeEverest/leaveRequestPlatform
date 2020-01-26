@@ -45,6 +45,34 @@ if (isset($_POST['submit'])) {
     <title>Create New Account</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Create Account</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="create_leave.php">Create Leave</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="departments.php">Departments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="employee_details.php">Employee Details</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="create_new_accounts.php">Create New Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="approved_pending_requests.php">Pending Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav><br>
     <div class="container">
         <h2>Create New Employee Account</h2>
         <form method="post">
