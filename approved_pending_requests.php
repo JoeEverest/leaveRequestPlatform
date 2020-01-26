@@ -41,6 +41,7 @@ while ($data = mysqli_fetch_array($getDepartment)) {
                 <th>Employee Name</th>
                 <th>Leave Requested</th>
                 <th>Attached Files</th>
+                <th>Days Requested</th>
                 <th>Date</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -53,6 +54,7 @@ while ($data = mysqli_fetch_array($getDepartment)) {
                 $name = $requests["name"];
                 $leaveRequested = $requests["leave_requested"];
                 $attachments = $requests["attachments"];
+                $daysRequested = $requests["number_of_days"];
                 $date = $requests["date"];
                 $status = $requests["status"];
             ?>
@@ -60,11 +62,12 @@ while ($data = mysqli_fetch_array($getDepartment)) {
                 <td><?php echo $name; ?></td>
                 <td><?php echo $leaveRequested; ?></td>
                 <td><a target="blank" href="uploads/<?php echo $attachments; ?>"><?php echo $attachments; ?></a></td>
+                <td><?php echo $daysRequested; ?></td>
                 <td><?php echo $date; ?></td>
                 <td><?php echo $status; ?></td>
                 <td>
                     <a href="approve_leave_days.php?id=<?php echo $id; ?>">
-                        <button class="btn btn-success">Approve Days</button>
+                        <button class="btn btn-success">Approve</button>
                     </a>
                 </td>
             </tr>

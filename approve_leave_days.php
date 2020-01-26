@@ -21,6 +21,7 @@ while ($requests = mysqli_fetch_array($query)) {
     $name = $requests["name"];
     $leaveRequested = $requests["leave_requested"];
     $attachments = $requests["attachments"];
+    $daysRequested = $requests["number_of_days"];
     $status = $requests["status"];
 }
 if (isset($_POST['approve'])) {
@@ -57,7 +58,7 @@ if (isset($_POST['approve'])) {
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <title>Approve Days</title>
+    <title>Approve Leave</title>
 </head>
 <body>
     <div class="container">
@@ -67,8 +68,8 @@ if (isset($_POST['approve'])) {
             <input type="text" name="name" readonly value="<?php echo $name; ?>" class="form-control">
             <label for="leave_requested">Leave Requested:</label>
             <input type="text" name="leave_requested" class="form-control" readonly value="<?php echo $leaveRequested; ?>">
-            <label for="days_approved">Days Approved:</label>
-            <input type="number" name="days_approved" class="form-control" placeholder="Number of days approved"><br>
+            <label for="days_approved">Days requested:</label>
+            <input type="number" readonly name="days_approved" class="form-control" value="<?php echo $daysRequested; ?>"><br>
             <button type="submit" name="approve" class="btn btn-success">Approve</button>
         </form>
     </div>

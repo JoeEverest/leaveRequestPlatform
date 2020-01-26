@@ -30,7 +30,7 @@ else{
                 <th>Leave Requested</th>
                 <th>Manager Feedback</th>
                 <th>HR Feedback</th>
-                <th>Days Granted</th>
+                <th>Days Requested</th>
                 <th>Date of Approval</th>
             </thead>
             <tbody>
@@ -41,6 +41,7 @@ else{
                     $reqID = $data['id'];
                     $name = $data['employee_name'];
                     $leaveRequested = $data['leave_request'];
+                    $daysRequested = $data['number_of_days'];
                     $status = $data['status'];
                     
                     $hrStatus = "SELECT * FROM hr_leave_requests WHERE request_id = '$reqID'";
@@ -62,7 +63,7 @@ else{
                     <td><?php echo $leaveRequested; ?></td>
                     <td><?php echo $status; ?></td>
                     <td><?php echo $statusHR; ?></td>
-                    <td><?php echo $daysApproved; ?></td>
+                    <td><?php echo $daysRequested; ?></td>
                     <td><?php echo $date; ?></td>
                 </tr>
                 <?php } ?>

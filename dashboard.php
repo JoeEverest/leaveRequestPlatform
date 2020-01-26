@@ -10,7 +10,7 @@ else{
 }
 $error = "";
 if (isset($_POST['submit'])) {
-    if (!$_POST['name'] | !$_POST['user']) {
+    if (!$_POST['name'] | !$_POST['user'] | !$_POST['number_of_days']) {
         echo "<script>alert('All Fields are required');</script>";
     }else{
         $leaveName = $_POST['name'];
@@ -30,19 +30,24 @@ if (isset($_POST['submit'])) {
         while ($data = mysqli_fetch_array($getDep)) {
             $departmantName = $data['name'];
         }
+        $numberOfDays = $_POST['number_of_days'];
         $today = date('Y-m-d', strtotime('Today'));
-        $addToTable = "INSERT INTO manager_leave_requests VALUES ('', '$name','$userLoggedIn', '$leaveName', '$attachement', '$departmantName', '$today', 'PENDING')";
-        if (mysqli_query($con, $addToTable)) {
-            if (move_uploaded_file($_FILES['attachments']['tmp_name'],$upload)) {
-                echo "<script> alert('Leave request submitted'); </script>";
-                header('Location: my_requests.php');
-            }else {
+        $addToTable = "INSERT INTO manager_leave_requests VALUES ('', '$name','$userLoggedIn', '$leaveName', '$attachement', '$numberOfDays', '$departmantName', '$today', 'PENDING')";
+        if (!$_FILES['attachments']['name']) {
+            header('Location: my_requests.php');
+        }else{
+            if (mysqli_query($con, $addToTable)) {
+                if (move_uploaded_file($_FILES['attachments']['tmp_name'],$upload)) {
+                    echo "<script> alert('Leave request submitted'); </script>";
+                    header('Location: my_requests.php');
+                }else {
+                    echo mysqli_error($con);
+                    echo 'There was an error '.$error;
+                }
+            }else{
                 echo mysqli_error($con);
                 echo 'There was an error '.$error;
             }
-        }else{
-            echo mysqli_error($con);
-            echo 'There was an error '.$error;
         }
     }
 }
@@ -90,6 +95,8 @@ if (isset($_POST['submit'])) {
                     <span><?php echo $leaveCondition; ?></span><br>
                     <label>User:</label>
                     <input type="text" class="form-control" readonly name="user" value="<?php echo $userLoggedIn; ?>"><br>
+                    <label for="number_of_days">Number of Days:</label>
+                    <input type="number" name="number_of_days" class="form-control"><br>
                     <label for="attachments">Upload Attachments;</label>
                     <input type="file" name="attachments" class="form-control-file"><br>
                     <button name="submit" class="btn btn-info">Submit Request</button>
