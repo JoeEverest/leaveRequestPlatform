@@ -2,8 +2,6 @@
 include('includes/config.php');
 session_start();
 include('includes/loginHandler.php');
-include('includes/admin/admin_login_handler.php');
-include('includes/management/management_login_handler.php');
 
 
 ?>
