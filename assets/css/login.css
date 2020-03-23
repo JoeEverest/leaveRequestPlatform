@@ -10,6 +10,9 @@ body{
     margin-top: 20vh;
     width: 35vw;
 }
+form h3{
+    color: white;
+}
 img{
     display: flex;
     margin: auto;
